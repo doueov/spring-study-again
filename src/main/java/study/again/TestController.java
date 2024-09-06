@@ -25,7 +25,7 @@ public class TestController {
     public CalculatorResult power(@RequestBody Calculator cal) {
         int result = 1;
         CalculatorResult calculatorResult = new CalculatorResult();
-        for(int i=0; i<cal.getPow(); i++) {
+        for (int i = 0; i < cal.getPow(); i++) {
             result *= cal.getNum();
         }
         calculatorResult.setResult(result);
