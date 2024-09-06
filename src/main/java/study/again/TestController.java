@@ -37,4 +37,30 @@ public class TestController {
         return calculatorResult;
     }
 
+    // reverse, uppercase, lowercase
+    @PostMapping("/string-transform")
+    @ResponseBody
+    public ResponseTransform stringTransfrom(@RequestBody RequestTransform str) {
+        String text = str.getText();
+        String op = str.getOperation();
+        String word[] = new String[text.length()];
+        String result = "";
+        if(op.equals("reverse")) {
+            for(int i=0; i<text.length(); i++) {
+
+            }
+        }
+        else if(op.equals("uppercase")) {
+            result = text.toUpperCase();
+        }
+        else if(op.equals("lowercase")) {
+            result = text.toLowerCase();
+        }
+        ResponseTransform responseTransform = new ResponseTransform();
+        responseTransform.setResult(result);
+        return responseTransform;
+    }
+
+
+
 }
