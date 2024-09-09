@@ -43,24 +43,20 @@ public class TestController {
     public ResponseTransform stringTransfrom(@RequestBody RequestTransform str) {
         String text = str.getText();
         String op = str.getOperation();
-        String word[] = new String[text.length()];
         String result = "";
-        if(op.equals("reverse")) {
-            for(int i=0; i<text.length(); i++) {
-
+        if (op.equals("reverse")) {
+            for (int i = text.length() - 1; i >= 0; i--) {
+                result += text.charAt(i);
             }
-        }
-        else if(op.equals("uppercase")) {
+        } else if (op.equals("uppercase")) {
             result = text.toUpperCase();
-        }
-        else if(op.equals("lowercase")) {
+        } else if (op.equals("lowercase")) {
             result = text.toLowerCase();
         }
         ResponseTransform responseTransform = new ResponseTransform();
         responseTransform.setResult(result);
         return responseTransform;
     }
-
 
 
 }
